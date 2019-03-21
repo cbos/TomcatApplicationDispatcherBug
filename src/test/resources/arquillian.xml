@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+Optional file.  Allows us to use random ports when running tests.
+The ports are communicated to the test via the @ArquillianResource annotation
+
+
+  @RunWith(Arquillian.class)
+  public class ColorBeanTest {
+
+      @ArquillianResource
+      private URL webappUrl;
+
+      // ....
+  }
+
+If this file is deleted the default Tomcat 8080 port is used
+-->
+<arquillian>
+  <container qualifier="tomcat" default="true">
+    <configuration>
+      <property name="bindHttpPort">8888</property>
+    </configuration>
+  </container>
+</arquillian>
